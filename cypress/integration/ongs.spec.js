@@ -28,12 +28,11 @@ describe('Ongs', () => {
     });
 
     it('deve poder realizar um login no sistema', () => {
-        // Variavel para armazenar a id da requisição feita com o comando createOng
-        const createOngId = Cypress.env('createdOngId');
-                
+        
+                        
         cy.visit('http://localhost:3000/');
-
-        cy.get('input').type(createOngId);
+        // Variavel para armazenar a id da requisição feita com o comando createOng
+        cy.get('input').type(Cypress.env('createdOngId'));
         cy.get('.button').click();
     });
 });
